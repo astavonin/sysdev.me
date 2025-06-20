@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+<!-- Custom front matter -->
+{% block extrahead %}
+
+  <!-- Extra style sheets (can't be set in mkdocs.yml due to content hash) -->
+  <link
+    rel="stylesheet"
+    href="{{ 'assets/stylesheets/custom.css' | url }}"
+  />
+{% endblock %}
+
+<!-- Announcement bar -->
+{% block announce %}
+  <p class="announce-line">
+    Feel free to connect:
+
+    <a class="announce-icon" href="https://www.linkedin.com/in/astavonin" title="LinkedIn">
+      {% include ".icons/fontawesome/brands/linkedin.svg" %}
+      <span>LinkedIn</span>
+    </a>
+
+    <a class="announce-icon" href="mailto:alex@sysdev.me" title="Email">
+      {% include ".icons/fontawesome/solid/envelope.svg" %}
+      <span>Email</span>
+    </a>
+
+    <a class="announce-icon" href="https://github.com/astavonin" title="GitHub">
+      {% include ".icons/fontawesome/brands/github.svg" %}
+      <span>GitHub</span>
+    </a>
+
+    <a class="announce-icon" href="https://sysdev.me/rss.xml" title="RSS">
+      {% include ".icons/fontawesome/solid/rss.svg" %}
+      <span>RSS</span>
+    </a>
+
+    <a class="announce-icon" href="https://docs.google.com/document/d/1B6FkmPzpCt1JsvCKw_fOGAZDPGMYh91Rvph19mPAgjQ/edit?usp=sharing" title="CV">
+      {% include ".icons/fontawesome/regular/file-lines.svg" %}
+      <span>CV</span>
+    </a>
+  </p>
+{% endblock %}

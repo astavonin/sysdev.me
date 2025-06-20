@@ -1,0 +1,90 @@
+site_name: CodeBlueprint
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: blue grey
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue grey
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  icon:
+    annotation: material/plus-circle
+  features:
+    - navigation.indexes
+    - navigation.instant
+    - navigation.footer
+    - navigation.tracking
+    - navigation.sections
+
+    - search.suggest
+    - search.highlight
+
+    - content.code.copy
+    - content.code.annotate
+
+    - toc.follow
+    - toc.integrate
+
+  extra_css:
+    - assets/stylesheets/custom.css
+
+extra:
+  social:
+    - icon: fontawesome/solid/square-rss
+      link: https://goperf.dev/feed_rss_created.xml
+    - icon: fontawesome/brands/github
+      link: https://github.com/astavonin/go-optimization-guide
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/astavonin
+
+plugins:
+  - blog:
+      blog_dir: .
+      blog_toc: true
+  - tags
+  - glightbox
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tilde
+  - pymdownx.details
+  - md_in_html
+  - pymdownx.blocks.caption
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+nav:
+  - Blog: index.md
+  - About: about.md
