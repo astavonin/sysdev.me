@@ -11,8 +11,8 @@ tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2024/11/actions_and_go.png" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2024/11/actions_and_go.png" alt="caption" width="250">
+  <a href="https://sysdev.me/img/actions_and_go.png" target="_blank">
+    <img src="https://sysdev.me/img/actions_and_go.png" alt="caption" width="250">
   </a>
 </figure>
 

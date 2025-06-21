@@ -12,8 +12,8 @@ tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2025/02/mountains.jpeg" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2025/02/mountains.jpeg" alt="caption" width="250">
+  <a href="https://sysdev.me/img/mountains.jpeg" target="_blank">
+    <img src="https://sysdev.me/img/mountains.jpeg" alt="caption" width="250">
   </a>
   <figcaption>
     From a weekend trip to a nearby gorge. Why is it here? Because I love the mountains of Kyrgyzstan!

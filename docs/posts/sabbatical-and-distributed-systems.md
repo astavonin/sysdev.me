@@ -9,8 +9,8 @@ tags:
   - Distributed Systems
 ---
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2024/09/1-scaled.jpeg" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2024/09/1-scaled.jpeg" alt="caption" width="250">
+  <a href="https://sysdev.me/img/bishkek.jpeg" target="_blank">
+    <img src="https://sysdev.me/img/bishkek.jpeg" alt="caption" width="250">
   </a>
   <figcaption>
     View from the rooftop of the apartment, where we settled down. I love running up on the left side of the river—quite a nice trail run.

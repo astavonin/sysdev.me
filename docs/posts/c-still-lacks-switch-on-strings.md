@@ -8,8 +8,8 @@ categories:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2025/02/Birch-Grove.jpeg" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2025/02/Birch-Grove.jpeg" alt="caption" width="250">
+  <a href="https://sysdev.me/img/Birch-Grove.jpeg" target="_blank">
+    <img src="https://sysdev.me/img/Birch-Grove.jpeg" alt="caption" width="250">
   </a>
   <figcaption>
     Birch Grove is just 40 minutes from Bishkek. Although I was concerned about the strong, foggy weather, it was an amazing opportunity for photography!

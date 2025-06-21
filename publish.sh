@@ -6,7 +6,7 @@ set -e
 SSH_USER="sysdevme"
 SSH_HOST="sysdev.me"
 SSH_KEY="$HOME/.ssh/id_rsa_sysdev"
-REMOTE_DIR="public_html/site"
+REMOTE_DIR="public_html"
 
 # === Build the site ===
 echo "📦 Building MkDocs site..."

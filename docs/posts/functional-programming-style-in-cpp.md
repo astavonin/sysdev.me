@@ -21,7 +21,7 @@ I’ve been on a bit of a Leetcode streak lately, poking at problems from compan
 
 My first pass was as traditional as it gets—a simple C++ class with a std::vector and a loop. No magic here, just pushing timestamps and scanning them one by one. The implementation is pretty naive, but considering the provided constraints from the [Design a hit counter](https://leetcode.com/problems/design-hit-counter) challenge, even an unscalable approach is acceptable. So, we will push all new timestamsp into the ~~`queue`~~ `vector` and then simply count.
 
-```cpp`
+```cpp
 class HitCounter {
     std::vector&lt;int> timestamps_;
     static constexpr int HITS_PERIOD = 300;
@@ -49,7 +49,8 @@ public:
         return res;
     }
 };
+```
 
 And, yes, this solution is completely compliant with the requirements and passes all tests. But it's really ugly, isn't it?
-
+<!-- more -->
 Next up was the Elixir version, where I leaned on an Agent to hold my list of timestamps. Elixir doesn’t let you mutate global state willy-nilly, so I spun up a small process to mind that list for me. Here’s the gist:

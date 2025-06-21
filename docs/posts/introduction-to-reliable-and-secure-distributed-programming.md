@@ -8,8 +8,8 @@ tags:
   - Software Architecture
 ---
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2024/11/10064443.jpg" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2024/11/10064443.jpg" alt="caption" width="250">
+  <a href="https://sysdev.me/img/dist_prog.jpg" target="_blank">
+    <img src="https://sysdev.me/img/dist_prog.jpg" alt="caption" width="250">
   </a>
 </figure>
 

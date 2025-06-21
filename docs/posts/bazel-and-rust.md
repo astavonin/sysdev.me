@@ -10,8 +10,8 @@ tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/wp-content/uploads/2024/12/rust_and_bazel.png" target="_blank">
-    <img src="https://sysdev.me/wp-content/uploads/2024/12/rust_and_bazel.png" alt="caption" width="250">
+  <a href="https://sysdev.me/img/rust_and_bazel.png" target="_blank">
+    <img src="https://sysdev.me/img/rust_and_bazel.png" alt="caption" width="250">
   </a>
 </figure>
 
