@@ -1,4 +1,5 @@
 site_name: CodeBlueprint
+site_url: https://sysdev.me
 theme:
   name: material
   custom_dir: overrides
@@ -50,7 +51,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/solid/square-rss
-      link: https://goperf.dev/feed_rss_created.xml
+      link: https://sysdev.me/feed_rss_created.xml
     - icon: fontawesome/brands/github
       link: https://github.com/astavonin/go-optimization-guide
     - icon: fontawesome/brands/linkedin
@@ -62,6 +63,12 @@ plugins:
       blog_toc: true
   - tags
   - glightbox
+  - include-markdown
+  - rss:
+      match_path: "posts/.*"
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
 
 markdown_extensions:
   - toc:
