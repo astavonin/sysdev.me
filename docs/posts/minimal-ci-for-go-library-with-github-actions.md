@@ -2,12 +2,11 @@
 title: "Minimal CI for Go library with GitHub actions"
 date: 2024-12-05
 categories:
-  - Software Engineering
-  - Tooling
-tags:
   - Go
   - CI
   - DevOps
+  - Tooling
+tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>

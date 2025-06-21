@@ -2,11 +2,10 @@
 title: "Sabbatical and Distributed Systems"
 date: 2024-09-30
 categories:
-  - Software Engineering
   - Books and Articles
-  - Architecture
-tags:
+  - Software Architecture
   - Distributed Systems
+tags:
 ---
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
   <a href="https://sysdev.me/img/bishkek.jpeg" target="_blank">

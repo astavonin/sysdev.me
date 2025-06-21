@@ -3,9 +3,9 @@ title: "Reflections on Reading “Introduction to Reliable and Secure Distribute
 date: 2024-11-18
 categories:
   - Books and Articles
-tags:
   - Distributed Systems
   - Software Architecture
+tags:
 ---
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
   <a href="https://sysdev.me/img/dist_prog.jpg" target="_blank">

@@ -2,8 +2,6 @@
 title: "GFSM: A Simple and Fast Finite State Machine for Go"
 date: 2024-11-25
 categories:
-  - Software Engineering
-tags:
   - Go
   - Software Architecture
 ---

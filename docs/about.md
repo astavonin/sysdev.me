@@ -8,7 +8,7 @@ Outside of work, I’m a dedicated Vim enthusiast. My [Vim configuration](https:
 
 I’m also passionate about sharing knowledge—whether it’s through tech talks, open-source contributions, or just helping others level up. You can check out my [LinkedIn](https://www.linkedin.com/in/astavonin/), browse my [GitHub](https://github.com/astavonin), or take a look at my [CV](https://docs.google.com/document/d/1B6FkmPzpCt1JsvCKw_fOGAZDPGMYh91Rvph19mPAgjQ/edit?usp=sharing) to see what I’ve been up to.
 
-When I’m not at my keyboard, I love traveling, capturing beautiful [nature shots](https://www.instagram.com/kaapython/) and [portraits](https://www.instagram.com/alexandveronika/), and spending time with my German Shepherd, [Molly](https://sysdev.me/old/wp-content/uploads/2025/02/1.jpeg)—she brings so much joy to my life!
+When I’m not at my keyboard, I love traveling, capturing beautiful [nature shots](https://www.instagram.com/kaapython/) and [portraits](https://www.instagram.com/alexandveronika/), and spending time with my German Shepherd, [Molly](https://sysdev.me/img/molly.jpeg)—she brings so much joy to my life!
 
 Talks I’ve Given:
 

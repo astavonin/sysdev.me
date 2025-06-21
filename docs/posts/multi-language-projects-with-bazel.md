@@ -2,11 +2,10 @@
 title: "Managing Multi-Language Projects with Bazel"
 date: 2025-01-14
 categories:
-  - Software Engineering
   - Tooling
-tags:
   - C++
   - Bazel
+tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>

@@ -2,9 +2,7 @@
 title: "Bazel and Rust: A Perfect Match for Scalable Development"
 date: 2024-12-29
 categories:
-  - Software Engineering
   - Tooling
-tags:
   - Rust
   - Bazel
 ---

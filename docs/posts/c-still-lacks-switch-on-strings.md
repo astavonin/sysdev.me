@@ -3,7 +3,7 @@ title: "AI, Software Engineering, and the Evolution of Code Generation"
 date: 2025-02-17
 categories:
   - C++
-  - Optimization
+  - Optimizations
   - Job Notes
 ---
 

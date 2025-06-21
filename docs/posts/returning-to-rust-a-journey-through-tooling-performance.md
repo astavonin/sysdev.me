@@ -2,14 +2,13 @@
 title: "Returning to Rust: A Journey Through Tooling, Performance"
 date: 2024-12-10
 categories:
-  - Software Engineering
-  - Tooling
-tags:
   - Rust
   - C++
   - Bazel
   - CMake
   - Go
+  - Tooling
+tags:
 ---
 
 [When I started tackling](https://github.com/astavonin/maelstrom-challenges) the [Maelstrom challenges](https://github.com/jepsen-io/maelstrom/tree/main), my initial thought was to use C++. It’s a language I know inside out, and its performance is hard to beat. However, as I contemplated setting up the project, I realized I couldn’t justify fighting with the C++ pipeline for free. Crafting a proper CMake or Bazel configuration might be worthwhile for large-scale projects or when compensated, but for personal experiments? It’s an unnecessary headache.

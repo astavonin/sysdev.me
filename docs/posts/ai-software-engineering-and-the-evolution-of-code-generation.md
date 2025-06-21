@@ -2,10 +2,6 @@
 title: "AI, Software Engineering, and the Evolution of Code Generation"
 date: 2025-02-05
 categories:
-  - Software Engineering
-  - AI
-  - Job Notes
-tags:
   - Go
   - AI
   - Job Notes

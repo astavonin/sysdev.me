@@ -2,13 +2,12 @@
 title: "How to compile C++ in 2025. Bazel or CMake?"
 date: 2025-01-20
 categories:
-  - Software Engineering
-  - Tooling
-tags:
   - C++
   - Bazel
   - CMake
   - Version Control Systems
+  - Tooling
+tags:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
