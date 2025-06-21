@@ -1,4 +1,5 @@
 ---
+title: "Reflections on Reading “Introduction to Reliable and Secure Distributed Programming”"
 date: 2024-11-18
 categories:
   - Books and Articles
@@ -6,8 +7,6 @@ tags:
   - Distributed Systems
   - Software Architecture
 ---
-# Reflections on Reading “Introduction to Reliable and Secure Distributed Programming”
-
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
   <a href="https://sysdev.me/wp-content/uploads/2024/11/10064443.jpg" target="_blank">
     <img src="https://sysdev.me/wp-content/uploads/2024/11/10064443.jpg" alt="caption" width="250">

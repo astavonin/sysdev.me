@@ -1,4 +1,5 @@
 ---
+title: "Sabbatical and Distributed Systems"
 date: 2024-09-30
 categories:
   - Software Engineering
@@ -7,8 +8,6 @@ categories:
 tags:
   - Distributed Systems
 ---
-# Sabbatical and Distributed Systems
-
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
   <a href="https://sysdev.me/wp-content/uploads/2024/09/1-scaled.jpeg" target="_blank">
     <img src="https://sysdev.me/wp-content/uploads/2024/09/1-scaled.jpeg" alt="caption" width="250">
