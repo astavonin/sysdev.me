@@ -1,5 +1,5 @@
 ---
-title: "AI, Software Engineering, and the Evolution of Code Generation"
+title: "Fixing C++ lacks switches on strings"
 date: 2025-02-17
 categories:
   - C++
