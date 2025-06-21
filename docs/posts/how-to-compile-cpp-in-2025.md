@@ -5,7 +5,6 @@ categories:
   - C++
   - Bazel
   - CMake
-  - Version Control Systems
   - Tooling
 tags:
 ---

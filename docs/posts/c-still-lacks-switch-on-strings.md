@@ -4,7 +4,6 @@ date: 2025-02-17
 categories:
   - C++
   - Optimizations
-  - Job Notes
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
