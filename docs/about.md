@@ -12,6 +12,7 @@ When I’m not at my keyboard, I love traveling, capturing beautiful [nature sho
 
 Talks I’ve Given:
 
+* [Architecture: What It Is and How to Approach It.](https://docs.google.com/presentation/d/18Uj8dVxu3e-0ELZy6LqvNENcLzdy_MhLfHJiAdLxW0g/edit) DevFest 2025.
 * [How to Structure a Project for a Smooth Experience.](https://docs.google.com/presentation/d/1eusLUNpu1eOugbAPnrL0eoVA1P-U6U0SINnCTSBOkQg/edit) DevFest 2024.
 * [Distributed Systems: formal modeling and verification.](https://www.meetup.com/golangsg/events/292660154/) GoSG, 2023.
 * [Why do you need a monorepo?](https://www.meetup.com/golangsg/events/287205376/) GoSG, 2022.
