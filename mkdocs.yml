@@ -56,6 +56,9 @@ extra:
       link: https://github.com/astavonin/go-optimization-guide
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/astavonin
+  analytics:
+    provider: google
+    property: G-B5LK3EFS8L
 
 plugins:
   - blog:
