@@ -10,9 +10,12 @@ categories:
 ---
 
 <figure style="float: left; width: 300px; margin: 0 1em 1em 0;" markdown>
-  <a href="https://sysdev.me/img/pi_crab.png" target="_blank">
-    <img src="https://sysdev.me/img/pi_crab.png" alt="" width="250">
+  <a href="https://sysdev.me/img/Shamshy.jpeg" target="_blank">
+    <img src="https://sysdev.me/img/Shamshy.jpeg" alt="" width="250">
   </a>
+  <figcaption>
+	A typical iconic Kyrgyzstan view.
+  </figcaption>
 </figure>
 
 Usually, you need just a few lines to initialize TSan in your project: you compile with the sanitizer flags, run the tests, and get a clear report of which threads touched which memory locations. On a modern Linux system, that simple expectation can fail in a very non-obvious way.
