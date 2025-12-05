@@ -45,6 +45,8 @@ theme:
     - toc.follow
     - toc.integrate
 
+    - content.footnote.tooltips
+
   extra_css:
     - assets/stylesheets/custom.css
 
