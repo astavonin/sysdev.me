@@ -68,6 +68,7 @@ Temporary Items
 
 # Session
 Session.vim
+.session.vim
 Sessionx.vim
 
 # Temporary
@@ -86,3 +87,4 @@ tags
 
 /site/
 .cache/
+/venv/
