@@ -1,0 +1,47 @@
+name: CI
+
+# A fresh checkout is the point: the build broke once because git cannot track
+# an empty directory, and nothing on a developer's machine reproduces that.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.12"
+
+      - name: Enable pnpm
+        run: corepack enable pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Formatting
+        run: pnpm format:check
+
+      - name: Type-check
+        run: pnpm check
+
+      - name: Unit tests
+        run: pnpm test:unit
+
+      - name: Install browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build and end-to-end tests
+        # PUBLIC_ANALYTICS stays unset: the suite asserts the tag is absent.
+        run: pnpm test:e2e
+
+      - name: Assert publishable artifacts
+        # The same gate publish.sh runs, so CI fails before a human would.
+        run: node scripts/assert-publishable.mjs dist tests/fixtures/historical-urls.txt

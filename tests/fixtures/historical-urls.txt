@@ -1,0 +1,30 @@
+# Historical URLs from the MkDocs site, extracted from its built output.
+# Independent of the code under test on purpose: this is the contract,
+# not a restatement of what permalinkFor() currently produces.
+
+/2022/06/29/til-how-to-debug-randomly-hanging-python-applications/
+/2024/09/30/sabbatical-and-distributed-systems/
+/2024/11/18/reflections-on-reading-introduction-to-reliable-and-secure-distributed-programming/
+/2024/11/25/gfsm-a-simple-and-fast-finite-state-machine-for-go/
+/2024/12/05/minimal-ci-for-go-library-with-github-actions/
+/2024/12/10/returning-to-rust-a-journey-through-tooling-performance/
+/2024/12/29/bazel-and-rust-a-perfect-match-for-scalable-development/
+/2025/01/14/managing-multi-language-projects-with-bazel/
+/2025/01/20/how-to-compile-c-in-2025-bazel-or-cmake/
+/2025/02/05/ai-software-engineering-and-the-evolution-of-code-generation/
+/2025/02/17/fixing-c-lacks-switches-on-strings/
+/2025/06/21/functional-programming-style-in-c/
+/2025/08/01/multilingual-benchmarking-project--bazel-for-advanced-engineering/
+/2025/11/09/identifying-video-streams-using-rtp-header-extensions/
+/2025/11/20/what-actually-drove-the-tech-layoffs/
+/2025/11/27/cross-compiling-rust-for-raspberry-pi/
+/2025/12/05/dealing-with-threadsanitizer-fails-on-startup/
+/2025/12/31/today-i-learned-git-shallow/
+/2026/01/14/development-processes-in-the-genai-era/
+/2026/02/12/ipo-season-and-the-death-of-software-engineering-again/
+/2026/02/19/making-genai-code-review-actually-useful/
+/2026/03/25/vibe-coding-experiment/
+/2026/08/10/over-engineering-used-to-be-bounded-by-boredom/
+/2026/09/07/i-cancelled-my-jetbrains-subscription/
+/2026/09/29/context-enrichment-for-multi-agent-code-review/
+/2026/10/19/bazel-cross-compilation/

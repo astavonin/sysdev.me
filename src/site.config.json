@@ -1,0 +1,64 @@
+{
+  "site": {
+    "name": "CodeBlueprint",
+    "logoText": "CodeBlueprint",
+    "favicon": "/favicon.ico",
+    "keywords": {
+      "en": [
+        "C++",
+        "Bazel",
+        "Rust",
+        "Go",
+        "systems programming",
+        "build systems",
+        "software architecture"
+      ]
+    },
+    "analyticsId": "G-B5LK3EFS8L"
+  },
+  "author": {
+    "name": {
+      "en": "CodeBlueprint"
+    },
+    "handle": "astavonin",
+    "github": "https://github.com/astavonin",
+    "legalName": "Alexander Stavonin"
+  },
+  "navigation": [
+    {
+      "label": "nav.home",
+      "url": "/"
+    },
+    {
+      "label": "nav.posts",
+      "url": "/posts/"
+    },
+    {
+      "label": "nav.about",
+      "url": "/about/"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "label": "",
+      "icon": "icon-[simple-icons--github]",
+      "url": "$author.github"
+    },
+    {
+      "name": "LinkedIn",
+      "label": "",
+      "icon": "icon-[simple-icons--linkedin]",
+      "url": "https://www.linkedin.com/in/astavonin"
+    },
+    {
+      "name": "RSS",
+      "label": "common.rss",
+      "icon": "icon-[lucide--rss]",
+      "url": "/rss.xml"
+    }
+  ],
+  "text": {
+    "en": {}
+  }
+}

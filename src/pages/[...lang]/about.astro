@@ -1,0 +1,96 @@
+---
+import { getLanguage, languagePaths, useTranslations } from "../../i18n";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import { getPersonalInfo } from "../../config";
+import { getAvatar } from "../../lib/avatar";
+import { Content as AboutText } from "../../data/about.md";
+export const getStaticPaths = languagePaths;
+const lang = getLanguage(Astro.params.lang);
+const t = useTranslations(lang);
+const personalInfo = getPersonalInfo(lang);
+---
+
+<BlogLayout
+  title={t("about.heroTitle")}
+  description={t("meta.aboutDescription")}
+  heroTitle={t("about.heroTitle")}
+  pageType="ProfilePage"
+>
+  <section class="card page-card about-card">
+    <div class="about-intro">
+      <img
+        {...await getAvatar(84)}
+        width="84"
+        height="84"
+        alt={personalInfo.name}
+      />
+      <div>
+        <h2>{t("about.greeting")}</h2>
+        <p>{personalInfo.role}</p>
+      </div>
+    </div>
+
+    <div class="about-body">
+      <AboutText />
+    </div>
+  </section>
+</BlogLayout>
+<style>
+  .about-intro {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .about-intro img {
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .about-intro h2 {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 2px 0 4px;
+  }
+  .about-intro p {
+    color: var(--accent);
+    font-size: 15px;
+    margin: 0;
+  }
+  .about-blog {
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 24px 0 0;
+  }
+  @media (max-width: 480px) {
+    .about-intro {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .about-body {
+    margin-top: 24px;
+    line-height: 1.75;
+  }
+  .about-body :global(p) {
+    margin: 0 0 16px;
+  }
+  .about-body :global(h2) {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 28px 0 12px;
+  }
+  .about-body :global(ul) {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .about-body :global(li) {
+    margin: 6px 0;
+  }
+  .about-body :global(a) {
+    color: var(--accent);
+  }
+</style>

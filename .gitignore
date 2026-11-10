@@ -83,8 +83,17 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,vim,go
 
-#MkDocs
+# Astro
+.env
+.env.*
+!.env.example
+/dist/
+/node_modules/
+/.astro/
+/test-results/
+/playwright-report/
 
+# MkDocs leftovers, kept so an old working tree stays clean
 /site/
 .cache/
 /venv/
