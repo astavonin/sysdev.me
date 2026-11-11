@@ -337,3 +337,43 @@ test.describe("Pages", () => {
     ).not.toContain(" ");
   });
 });
+
+test.describe("Footnotes", () => {
+  // The post with the most references; the markers are what readers hunt for.
+  const POST = "/2026/10/19/bazel-cross-compilation/";
+
+  test("markers are set apart from the words they follow", async ({ page }) => {
+    await page.goto(POST);
+    const ref = page.locator("[data-footnote-ref]").first();
+    const marker = await ref.evaluate((el) => {
+      const prose = el.closest(".prose") as HTMLElement;
+      return {
+        size: parseFloat(getComputedStyle(el).fontSize),
+        prose: parseFloat(
+          getComputedStyle(prose.querySelector("p") as HTMLElement).fontSize,
+        ),
+        decoration: getComputedStyle(el).textDecorationLine,
+        before: getComputedStyle(el, "::before").content,
+        after: getComputedStyle(el, "::after").content,
+      };
+    });
+    // At prose size and carrying the usual link underline, a marker reads as
+    // part of the word in front of it rather than as a reference.
+    expect(marker.size).toBeLessThan(marker.prose * 0.85);
+    expect(marker.decoration).toBe("none");
+    expect(marker.before).toContain("[");
+    expect(marker.after).toContain("]");
+  });
+
+  test("a marker jumps to its note, and the note jumps back", async ({
+    page,
+  }) => {
+    await page.goto(POST);
+    const ref = page.locator("[data-footnote-ref]").first();
+    const note = (await ref.getAttribute("href")) as string;
+    await ref.click();
+    await expect(page.locator(note)).toBeInViewport();
+    await page.locator(`${note} [data-footnote-backref]`).click();
+    await expect(ref).toBeInViewport();
+  });
+});

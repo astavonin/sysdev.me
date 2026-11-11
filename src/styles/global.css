@@ -358,6 +358,27 @@ a.chip:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* A footnote marker inherits the link underline and sits close to the word it
+   follows, so it reads as part of that word. Bracket it, raise it and drop the
+   underline so the eye can skip it while reading and still find it on purpose. */
+.prose [data-footnote-ref] {
+  position: relative;
+  top: -0.15em;
+  margin-left: 0.15em;
+  font-weight: 600;
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+.prose [data-footnote-ref]::before {
+  content: "[";
+}
+.prose [data-footnote-ref]::after {
+  content: "]";
+}
+.prose [data-footnote-ref]:hover,
+.prose [data-footnote-ref]:focus-visible {
+  text-decoration: underline;
+}
 .prose ul,
 .prose ol {
   padding-left: 1.4em;
