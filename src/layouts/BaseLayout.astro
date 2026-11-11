@@ -72,7 +72,7 @@ const graph: Record<string, unknown>[] = [
   {
     "@type": "Person",
     "@id": ids.person,
-    name: personalInfo.name,
+    name: personalInfo.legalName,
     alternateName: personalInfo.englishName,
     jobTitle: personalInfo.role,
     url: absolute(localizePath(lang, "/about/")),
@@ -122,7 +122,7 @@ if (article) {
       author: {
         "@id": ids.person,
         "@type": "Person",
-        name: personalInfo.name,
+        name: personalInfo.legalName,
         url: absolute(localizePath(lang, "/about/")),
       },
       publisher: { "@id": ids.person },

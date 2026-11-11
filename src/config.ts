@@ -43,10 +43,10 @@ export function getHeaderConfig(lang: Language) {
 
 export function getPersonalInfo(lang: Language) {
   return {
-    // The human behind the site; `site.name` carries the publication name.
-    name: settings.author.legalName,
+    // Display name, shown on the profile card and in <meta name="author">.
+    name: settings.author.name[lang],
     englishName: settings.author.handle,
-    // Full name for the copyright line; the handle carries the © notice.
+    // The human. Used where schema.org means a person, and in the © line.
     legalName: settings.author.legalName,
     role: translate(lang, "author.role"),
     github: settings.author.github,
