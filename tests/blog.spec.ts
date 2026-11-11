@@ -24,6 +24,8 @@ const historicalUrls = readFileSync(
   .filter((line) => line && !line.startsWith("#"));
 
 const FEEDS = ["/rss.xml", "/feed_rss_created.xml", "/feed_rss_updated.xml"];
+// Regenerated so `publish.sh --delete` does not drop MkDocs-era subscribers.
+const JSON_FEEDS = ["/feed_json_created.json", "/feed_json_updated.json"];
 
 test.describe("URL preservation", () => {
   test("every historical URL resolves and is its own canonical", async ({
@@ -88,6 +90,28 @@ test.describe("Feeds", () => {
     // Superset: new posts join the feed, historical ones must never leave it.
     for (const url of historicalUrls) {
       expect(links, `feed dropped ${url}`).toContain(`${ORIGIN}${url}`);
+    }
+  });
+
+  test("the legacy JSON feeds serve every post with absolute URLs", async ({
+    request,
+  }) => {
+    for (const path of JSON_FEEDS) {
+      const response = await request.get(path);
+      expect(response.status(), `${path} must serve`).toBe(200);
+      const feed = JSON.parse(await response.text());
+      expect(feed.version).toContain("jsonfeed.org");
+      expect(feed.feed_url).toBe(`${ORIGIN}${path}`);
+      expect(feed.items.length).toBeGreaterThanOrEqual(historicalUrls.length);
+      for (const url of historicalUrls) {
+        expect(
+          feed.items.map((item: { url: string }) => item.url),
+          `${path} dropped ${url}`,
+        ).toContain(`${ORIGIN}${url}`);
+      }
+      // Readers resolve relative srcs against their own host.
+      expect(feed.items[0].content_html).toContain(`${ORIGIN}/img/`);
+      expect(feed.items[0].content_html).not.toMatch(/src="\/(?!\/)/);
     }
   });
 

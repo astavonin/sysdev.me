@@ -59,15 +59,21 @@ Security headers are the web server's job: this deploy is a plain rsync, so a
 Cloudflare-style `public/_headers` file would be inert (and served as text).
 Configure them in nginx/`.htaccess` on the host.
 
-Deployment does not use `rsync --delete`, so the remote still holds the previous
-MkDocs output. Mirroring would remove it — along with the `feed_json_*.json`
-feeds, which this site does not generate. Dry-run before changing that; the
-command is in `publish.sh`.
+Deployment uses `rsync --delete`, so the host mirrors `dist/` exactly and the
+leftover MkDocs output is removed on the next publish. Every path that site
+published is generated here, including the two JSON feeds, so nothing a
+subscriber uses disappears. Preview first with `./publish.sh --dry-run`, which
+lists additions and deletions and transfers nothing.
+
+One thing `--delete` cannot undo: a file that only ever existed on the server
+and was never committed. Two images were in that state before the migration.
 
 ## Feeds
 
 `/rss.xml` is canonical. `/feed_rss_created.xml` and `/feed_rss_updated.xml`
-serve the same content for subscribers from the MkDocs era.
+serve the same content for subscribers from the MkDocs era, and
+`/feed_json_created.json` / `/feed_json_updated.json` do the same in JSON Feed
+1.1 — all five are generated, so `--delete` never drops a subscriber.
 
 ## Vendoring
 

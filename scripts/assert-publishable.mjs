@@ -41,6 +41,8 @@ for (const file of [
   "rss.xml",
   "feed_rss_created.xml",
   "feed_rss_updated.xml",
+  "feed_json_created.json",
+  "feed_json_updated.json",
   "sitemap-index.xml",
   "sitemap.xml",
   "index.html",
