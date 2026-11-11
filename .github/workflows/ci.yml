@@ -12,16 +12,24 @@ permissions:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
+    # Pinned rather than ubuntu-latest, which is mid-migration to Ubuntu 26:
+    # the runner image should move when someone chooses to move it.
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22.12"
 
       - name: Enable pnpm
-        run: corepack enable pnpm
+        # Node bundles a corepack that hard-codes npm's signing keys, and npm
+        # has rotated them since 22.12 shipped, so the bundled one cannot verify
+        # the pnpm download. --force is needed because its shim already owns the
+        # path. The pnpm version itself stays pinned in package.json.
+        run: |
+          npm install -g --force corepack@latest
+          corepack enable pnpm
 
       - name: Install
         run: pnpm install --frozen-lockfile

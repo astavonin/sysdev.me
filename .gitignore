@@ -83,6 +83,11 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,vim,go
 
+# Local-only notes. Listed here as well as in the global ignore file because
+# prettier reads this one, and would otherwise fail format:check on a file CI
+# never sees.
+*.local.md
+
 # Astro
 .env
 .env.*
