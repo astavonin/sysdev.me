@@ -8,7 +8,11 @@ I'm also passionate about sharing knowledge—whether it's through tech talks, o
 
 When I'm not at my keyboard, I love traveling, capturing beautiful [nature shots](https://www.instagram.com/kaapython/) and [portraits](https://www.instagram.com/alexandveronika/), and spending time with my German Shepherd, [Molly](/img/molly.jpeg)—she brings so much joy to my life!
 
-## Talks I've Given
+## Book
+
+[Высокопроизводительный Go. Руководство по оптимизации](https://bhv.ru/product/vysokoproizvoditelnyj-go-rukovodstvo-po-optimizatsii/) — БХВ, 2026, 256 pages, ISBN 978-601-12-9654-0. It's the Russian translation of my [Go Optimization Guide](https://github.com/astavonin/go-optimization-guide) (1.2k stars on GitHub), which stays free and open in English at [goperf.dev](https://goperf.dev): memory and the heap/stack split, goroutine scheduling, data structure choice, atomics and profiling, built around one gRPC/TLS/HTTP-2 service taken through rising load.
+
+## Talks and Articles
 
 - [Architecture: What It Is and How to Approach It.](https://docs.google.com/presentation/d/18Uj8dVxu3e-0ELZy6LqvNENcLzdy_MhLfHJiAdLxW0g/edit) DevFest 2025.
 - [How to Structure a Project for a Smooth Experience.](https://docs.google.com/presentation/d/1eusLUNpu1eOugbAPnrL0eoVA1P-U6U0SINnCTSBOkQg/edit) DevFest 2024.
