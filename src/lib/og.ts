@@ -33,6 +33,42 @@ function loadAssets() {
   return assets;
 }
 
+// How much black sits between the cover photo and the text. The card is read
+// as a thumbnail, so legibility wins over showing the photo off.
+const SCRIM = 0.62;
+
+const covers = new Map<string, Promise<string | null>>();
+// The cover is a path under public/, and JPEG keeps the data URI small enough
+// that satori is not handed a megabyte per card.
+function coverBackground(cover: string) {
+  if (!covers.has(cover)) {
+    covers.set(
+      cover,
+      sharp(resolve(`public${cover}`))
+        .resize(OG_WIDTH, OG_HEIGHT, { fit: "cover" })
+        .composite([
+          {
+            input: {
+              create: {
+                width: OG_WIDTH,
+                height: OG_HEIGHT,
+                channels: 4,
+                background: { r: 10, g: 11, b: 13, alpha: SCRIM },
+              },
+            },
+          },
+        ])
+        .jpeg({ quality: 80 })
+        .toBuffer()
+        .then((buffer) => `data:image/jpeg;base64,${buffer.toString("base64")}`)
+        // A missing or unreadable cover falls back to the flat background
+        // rather than failing the build over a preview image.
+        .catch(() => null),
+    );
+  }
+  return covers.get(cover) as Promise<string | null>;
+}
+
 type Node = {
   type: string;
   props: {
@@ -55,11 +91,15 @@ export type OgContent = {
   description: string;
   author: string;
   role: string;
+  cover?: string;
 };
 
 // Social preview image shared by Open Graph, X/Twitter, and structured data.
 export async function renderOgImage(content: OgContent) {
   const { regular, bold, avatar } = await loadAssets();
+  const background = content.cover
+    ? await coverBackground(content.cover)
+    : null;
   const titleSize = content.title.length > 60 ? 54 : 64;
   // Satori sizes boxes like content-box, so subtract padding and border.
   const textWidth = OG_WIDTH - 16 - 160;
@@ -74,6 +114,12 @@ export async function renderOgImage(content: OgContent) {
       justifyContent: "space-between",
       padding: "72px 80px",
       background: "#17191c",
+      ...(background
+        ? {
+            backgroundImage: `url(${background})`,
+            backgroundSize: `${OG_WIDTH}px ${OG_HEIGHT}px`,
+          }
+        : {}),
       borderLeft: "16px solid #8daac7",
       color: "#dcdfe3",
       fontFamily: "IBM Plex Sans",
@@ -149,5 +195,9 @@ export async function renderOgImage(content: OgContent) {
       { name: "IBM Plex Sans", data: bold, weight: 600, style: "normal" },
     ],
   });
-  return sharp(Buffer.from(svg)).png({ compressionLevel: 9 }).toBuffer();
+  // A photo background turns this into a real image: quantizing holds the card
+  // near 300KB instead of 1.2MB, and nothing here is viewed above thumbnail size.
+  return sharp(Buffer.from(svg))
+    .png({ compressionLevel: 9, palette: true, quality: 70 })
+    .toBuffer();
 }

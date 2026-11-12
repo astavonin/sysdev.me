@@ -398,3 +398,23 @@ test.describe("Article summary", () => {
     expect(colors.summary).not.toBe(colors.body);
   });
 });
+
+test.describe("Social cards", () => {
+  test("a post with a photo cover gets that photo behind its card", async ({
+    page,
+    request,
+  }) => {
+    await page.goto("/2026/11/12/ci-for-embedded-projects/");
+    const card = await page
+      .locator('meta[property="og:image"]')
+      .getAttribute("content");
+    expect(card).toContain("/og/en/ci-for-embedded-projects.png");
+    const response = await request.get(new URL(card as string).pathname);
+    expect(response.headers()["content-type"]).toContain("image/png");
+    // The flat card is an order of magnitude smaller, so size separates a
+    // composited photo from the fallback without decoding the image.
+    const bytes = (await response.body()).length;
+    expect(bytes).toBeGreaterThan(100_000);
+    expect(bytes).toBeLessThan(600_000);
+  });
+});

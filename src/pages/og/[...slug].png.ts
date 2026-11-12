@@ -18,6 +18,7 @@ export async function getStaticPaths() {
           eyebrow: categoryLabel(lang, post.data.category),
           title: post.data.title,
           description: post.data.description,
+          cover: post.data.cover,
         },
       }));
       return [
