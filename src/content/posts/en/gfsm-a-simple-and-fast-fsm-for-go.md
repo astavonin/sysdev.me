@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-Design patterns are not widely used in Go, as they can often lead to unnecessary complexity in the codebase. However, the Finite State Machine (FSM) is an exception that proves to be incredibly useful. When I set out to design [GFSM](https://github.com/astavonin/gfsm), I aimed to create a fast and straightforward FSM implementation for Go.
+However, the Finite State Machine (FSM) is an exception that proves to be incredibly useful. When I set out to design [GFSM](https://github.com/astavonin/gfsm), I aimed to create a fast and straightforward FSM implementation for Go.
 
 I initially sought a quick and straightforward FSM solution for Go, but I couldn't find anything that met my needs. Drawing inspiration from the speed-focused and minimalistic principles of C++ while remaining true to Go's idioms, I developed [GFSM](https://github.com/astavonin/gfsm) to fill this gap. The outcome is GFSM—a library that distinguishes itself from alternatives like [looplab/fsm](https://github.com/looplab/fsm) by prioritizing speed and simplicity.
 

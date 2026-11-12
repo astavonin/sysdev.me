@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-Usually, you need just a few lines to initialize TSan in your project: you compile with the sanitizer flags, run the tests, and get a clear report of which threads touched which memory locations. On a modern Linux system, that simple expectation can fail in a very non-obvious way.
+On a modern Linux system, that simple expectation can fail in a very non-obvious way.
 
 ```
 FATAL: ThreadSanitizer: unexpected memory mapping 0x...

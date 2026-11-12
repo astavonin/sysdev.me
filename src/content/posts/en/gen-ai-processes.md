@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-The current debate around GenAI and C++ is a good illustration of the real problem. Many engineers report that models are worse than juniors. Others report dramatic speedups on the same language and problem space. Both observations are correct.
+Others report dramatic speedups on the same language and problem space. Both observations are correct.
 
 The difference is not the model. It is the absence or presence of the state.
 

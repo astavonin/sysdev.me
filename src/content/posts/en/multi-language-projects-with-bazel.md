@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-In today’s software development landscape, it’s rare to encounter a project built with just one programming language or platform. Modern applications often require integrating multiple technologies to meet diverse requirements. This complexity is both a challenge and an opportunity, demanding robust tools to manage dependencies, builds, and integrations seamlessly. Bazel, a powerful build system, is one such tool that has proven invaluable for multi-language projects.
+Modern applications often require integrating multiple technologies to meet diverse requirements. This complexity is both a challenge and an opportunity, demanding robust tools to manage dependencies, builds, and integrations seamlessly. Bazel, a powerful build system, is one such tool that has proven invaluable for multi-language projects.
 
 Recently, I decided to extend my [Maelstrom challenges](https://github.com/astavonin/maelstrom-challenges) with a C++-based test to explore how Bazel can simplify managing multi-language dependencies and streamline development workflows.
 

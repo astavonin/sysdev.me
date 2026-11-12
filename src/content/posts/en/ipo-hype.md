@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-I check Blind the way some people check horoscopes: every morning, expecting drama, occasionally finding truth. The Economist I read for the opposite reason, it's calm, structured, backed by actual data. These two don't usually agree on much. But over the past couple of months, they've converged on the same narrative, and that's when I start paying attention.
+The Economist I read for the opposite reason, it's calm, structured, backed by actual data. These two don't usually agree on much. But over the past couple of months, they've converged on the same narrative, and that's when I start paying attention.
 
 ## December 2025: the quiet IPO prep
 

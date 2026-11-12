@@ -16,8 +16,6 @@ featured: false
   </a>
 </figure>
 
-A bit more interesting data on vibe-coding vs structured assistant-coding.
-
 Yesterday I ran an experiment. Had a task that will never touch production (local utility), and I'd been reading yet another piece about some engineer cranking out 10 MRs per day with AI. Good enough reason to actually try the dump-everything-at-once approach.
 
 So I described the full scope to Claude upfront and let it run. Two things stood out. It took longer and produced more frustrating dead ends than my usual flow (detailed design first, then feature-by-feature implementation[^1]). And it burned roughly twice the tokens compared to the structured approach. March 24 alone hit $35 after a session involving all three models, versus $10 on a more focused day. If you want to track your own numbers, `npx ccusage@latest` does the job.

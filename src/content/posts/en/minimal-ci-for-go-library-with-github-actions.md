@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-Continuous Integration (CI) has become an essential part of modern software development, and for good reason. It ensures code quality, speeds up development, and catches potential issues early. However, you can get started without an elaborate CI setup. Even a minimal CI setup can significantly improve your workflow. Here's why every project should have at least minimal CI and how to implement it effectively using GitHub Actions.
+It ensures code quality, speeds up development, and catches potential issues early. However, you can get started without an elaborate CI setup. Even a minimal CI setup can significantly improve your workflow. Here's why every project should have at least minimal CI and how to implement it effectively using GitHub Actions.
 
 ## What Constitutes Minimal CI?
 
@@ -40,7 +40,7 @@ For example, for my small open-source Go library [GFSM](https://github.com/astav
 
 ### 1. Build Workflow
 
-The build workflow ensures your code compiles and passes tests on every <inl_code>push</inl_code> or <inl_code>pull_request</inl_code> to any branch:
+The build workflow ensures your code compiles and passes tests on every `push` or `pull_request` to any branch:
 
 ```yaml
 on: ["push", "pull_request"]

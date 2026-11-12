@@ -1,6 +1,6 @@
 ---
 title: "How to compile C++ in 2025. Bazel or CMake?"
-description: "Today, we\u2019re examining two modern build systems for C++: CMake, the industry favorite, and Bazel, a powerful alternative."
+description: "CMake is the industry favorite and Bazel is the powerful alternative. I built the same real C++ library with both, maelstrom-node, to compare their approaches, strengths and quirks."
 date: 2025-01-20
 slug: "how-to-compile-c-in-2025-bazel-or-cmake"
 lang: en

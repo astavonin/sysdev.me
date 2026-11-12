@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-C++ is a powerful language, and I genuinely love it, but sometimes, even in modern versions, it lacks some surprisingly simple features. One such missing feature is switch on `std::string`. You’d think that by now, we could use a switch statement on strings just like we do with integers or enums—after all, Go has it! But no, C++ keeps us on our toes.
+One such missing feature is switch on `std::string`. You’d think that by now, we could use a switch statement on strings just like we do with integers or enums—after all, Go has it! But no, C++ keeps us on our toes.
 
 Why Doesn’t C++ Support switch on strings? Because "you only pay for what you use," which is the standard C++ mantra. The switch statement in C++ relies on integral types. Under the hood, it works by converting the case values into jump table indices for efficient execution. But `std::string` (or even `std::string_view`) is not an integral type—it’s a more complex data structure. That’s why you can’t simply do:
 

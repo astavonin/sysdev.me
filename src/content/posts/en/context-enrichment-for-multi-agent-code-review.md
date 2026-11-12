@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-When a model gets something wrong, we reach for the same words: it hallucinated, it ignored the instructions, it isn't smart enough yet. Sometimes that's true. More often, in my experience, the model did a decent job with what it was given, and what it was given was thin.
+More often, in my experience, the model did a decent job with what it was given, and what it was given was thin.
 
 Think about what makes a developer good on a project they've been on for a while. It's rarely typing speed. It's the context they carry around: which approaches were tried and dropped, which subsystem already solves a similar problem, and above all why each decision was made. None of that is in the diff. It lives in their heads, in the docs, in old tickets, in a Slack thread nobody bookmarked.
 

@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-I’ve been on a bit of a Leetcode streak lately, poking at problems from companies I secretly admire. To keep things interesting (and to avoid nodding off in front of the screen), I challenged myself to solve the same task three ways: good old C++, its shiny modern C++20 cousin, and Elixir. It turns out that staring at a problem through a functional programming lens is like putting on X-ray specs—you see the same lines of code, but suddenly, there’s a weird beauty in that filter chain.<
+To keep things interesting (and to avoid nodding off in front of the screen), I challenged myself to solve the same task three ways: good old C++, its shiny modern C++20 cousin, and Elixir. It turns out that staring at a problem through a functional programming lens is like putting on X-ray specs—you see the same lines of code, but suddenly, there’s a weird beauty in that filter chain.<
 
 My first pass was as traditional as it gets—a simple C++ class with an array and a loop. No magic here, just pushing timestamps and scanning them one by one. The implementation is pretty naive, but considering the constraints provided by the [Design a hit counter](https://leetcode.com/problems/design-hit-counter) challenge, even an unscalable approach is acceptable. So, we will push all new timestamps into the ~~`std::queue`~~ `std::vector` and then simply count.
 

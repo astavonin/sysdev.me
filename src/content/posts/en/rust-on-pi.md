@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-I just started a new embedded pet project on the Raspberry Pi, and I expect it'll be a pretty big one, so I've been thinking about the technology from the beginning. The overall goal is to create a glass-to-glass video pipeline example. Let's see how it's going. For now, I'm using a USB `V4L2` camera while waiting for the native Pi modules to arrive, but it's enough to sketch the capture loop and start testing the build pipeline. The application itself is minimal—open `/dev/video0`, request `YUYV` at 1280x720, set up `MMAP` buffers, and iterate over frames—but the real challenge occurs when `v4l` triggers `bindgen`, and the build must cross-compile cleanly for `aarch64`. 
+The overall goal is to create a glass-to-glass video pipeline example. Let's see how it's going. For now, I'm using a USB `V4L2` camera while waiting for the native Pi modules to arrive, but it's enough to sketch the capture loop and start testing the build pipeline. The application itself is minimal—open `/dev/video0`, request `YUYV` at 1280x720, set up `MMAP` buffers, and iterate over frames—but the real challenge occurs when `v4l` triggers `bindgen`, and the build must cross-compile cleanly for `aarch64`.
 
 The language choice immediately becomes part of the equation right away. Go is my favorite and, usually, is not considered as an option by many embedded developers. But it's a good choice for small embedded utilities because its cross-compilation story is nearly effortless. Need an ARM binary? One command and you have it!
 

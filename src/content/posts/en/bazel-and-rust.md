@@ -16,7 +16,7 @@ featured: false
   </a>
 </figure>
 
-Bazel never fails to impress, and its support for Rust demonstrates its versatility and commitment to modern development. Two distinct dependency management modes—Cargo—based and pure Bazel—allow developers to tailor workflows to their projects' needs. This adaptability is particularly valuable for integrating Rust applications into monorepos or scaling complex systems.
+Two distinct dependency management modes—Cargo—based and pure Bazel—allow developers to tailor workflows to their projects' needs. This adaptability is particularly valuable for integrating Rust applications into monorepos or scaling complex systems.
 I decided to explore how Bazel supports Rust, including managing dependencies, migrating from `Cargo.toml` to `BUILD.bazel`, and streamlining integration testing.
 
 ## Harnessing Cargo-Based Dependency Management

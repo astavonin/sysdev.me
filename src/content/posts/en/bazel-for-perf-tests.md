@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-When working on performance experiments across C++ and Go, you obviously need a multilingual project structure. There were two paths forward: create separate build systems under a shared repository, or consolidate everything under a single, coherent framework. Bazel made that decision easy.
+There were two paths forward: create separate build systems under a shared repository, or consolidate everything under a single, coherent framework. Bazel made that decision easy.
 
 Using Bazel to unify builds isn’t just convenient—it should be the default choice for any serious engineering effort that involves multiple languages. It eliminates the friction of managing isolated tools, brings deterministic builds, and handles dependencies, benchmarking, and cross-language coordination with minimal ceremony.
 

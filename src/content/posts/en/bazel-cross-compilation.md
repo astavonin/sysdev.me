@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-As far as I'm concerned, Bazel is the best build tool you can pick today, as long as it supports your language. A real dependency graph, hermetic toolchains, a remote cache that actually works, one command to build and test everything. And yet every time I bring it up with embedded people, the first question is the same: fine, but what about cross-compilation?
+A real dependency graph, hermetic toolchains, a remote cache that actually works, one command to build and test everything. And yet every time I bring it up with embedded people, the first question is the same: fine, but what about cross-compilation?
 
 Fair question. Most of us grew up with a vendor SDK that hijacks the shell through an `environment-setup` script, or with the "just build it on the board" approach because it looks simpler. It isn't simpler. A Raspberry Pi 5 is a decent target and a lousy build machine, and nothing about an ARM CPU requires the compiler to run on it.
 

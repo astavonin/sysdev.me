@@ -9,7 +9,7 @@ tags: ["Optimizations", "Tooling"]
 featured: false
 ---
 
-Usually, if a Python-based application hangs, you either read logs or grab one of the PBD-based solutions, attaching to the application, and uses the Python console for investigation. The approach is straightforward; for example, you installed <inl_code>pdb-attach</inl_code>, and add a few lines to your application:
+The approach is straightforward; for example, you installed `pdb-attach`, and add a few lines to your application:
 
 ```python
 import pdb_attach

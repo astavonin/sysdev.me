@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-When a system manages dozens of cameras or edge devices, packets alone don’t tell you much. An IP and port might change, SSRCs can roll over, and NATs tend to shuffle everything just enough to break simple assumptions. Yet every media packet still needs a clear identity — not for transport, but for logic.
+An IP and port might change, SSRCs can roll over, and NATs tend to shuffle everything just enough to break simple assumptions. Yet every media packet still needs a clear identity — not for transport, but for logic.
 
 There are many ways to attach that identity: control channels, per-session negotiation, external registries. But the most simple one is already part of RTP itself — the header extension defined by [RFC 8285](https://www.rfc-editor.org/rfc/rfc8285).
 

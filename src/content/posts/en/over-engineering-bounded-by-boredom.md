@@ -19,8 +19,6 @@ featured: false
   </figcaption>
 </figure>
 
-A feature I'd sized at roughly 200 lines came back as 8,391 added and 692 removed, 3,431 of those lines being tests.
-
 The requirement was one sentence. A CI job needs one of the two physical devices wired to the test rig, so: enumerate what's attached, pick one that's online, hand it back at teardown. What shipped was a forked daemon holding a `flock` for the lifetime of the job, PID identity verification against `/proc` start times, a SIGTERM to SIGKILL termination ladder, orphan sweeps, a readiness pipe, file-descriptor relocation, stdio detach, signal reset, and the tests to keep all of that honest.
 
 Nothing there is an agent going off the rails. Every review finding was correct, and every guard defends against something that can really happen. The design is defensible option by option, which is the problem: the failure isn't visible anywhere except in the total. One incident, examined afterward against a census of my own configuration, so n is one.

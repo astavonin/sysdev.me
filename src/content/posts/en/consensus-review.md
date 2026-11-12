@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-I ran a single Claude reviewer agent against an approximately 1000-line C++ change last month (yes, it's too big for a normal workflow, but we are in the GenAI era and norms are different)—some pretty important video pipeline updates, but nothing exotic. The review came back with 14 findings. Three were real. The rest included a phantom race condition in code that runs on a single thread, two style nitpicks elevated to High severity, and a complaint about missing error handling on a function that already returns `std::expected`. The signal-to-noise ratio was bad enough that I almost closed the tab.
+The review came back with 14 findings. Three were real. The rest included a phantom race condition in code that runs on a single thread, two style nitpicks elevated to High severity, and a complaint about missing error handling on a function that already returns `std::expected`. The signal-to-noise ratio was bad enough that I almost closed the tab.
 
 This is the dirty secret of GenAI-assisted code review. The models are good enough to spot real issues, sometimes ones a tired human would miss. But they also hallucinate problems with enough confidence to waste your time, and the false positives are not random. They cluster around the same blind spots every run because they come from the same weights, the same training distribution, the same biases baked into one model family.
 

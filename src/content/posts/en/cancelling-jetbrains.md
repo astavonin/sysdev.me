@@ -19,7 +19,7 @@ featured: false
   </figcaption>
 </figure>
 
-Today I cancelled my JetBrains subscription. Cancelling subscriptions is a popular trend right now, except the ones people announce dropping are Claude, ChatGPT, whichever model annoyed them this week. I went the other way. The models stay. The IDE goes. For a line item on a credit card statement it feels more symbolic than it should.
+Cancelling subscriptions is a popular trend right now, except the ones people announce dropping are Claude, ChatGPT, whichever model annoyed them this week. I went the other way. The models stay. The IDE goes. For a line item on a credit card statement it feels more symbolic than it should.
 
 I have always been a Vim person. That never changed, and it isn't changing now. But I have been paying JetBrains since 2012, because for a long time Vim lost on two things. Navigation was the real gap: before language servers you had ctags, which is a text index pretending to understand code. No types, no scopes, five candidates for every common name. The other gap was visual. An IDE highlights faster and shows more, errors and types painted onto the code before you ask for them. Language servers closed the first gap. The second one JetBrains still wins, and the rest of this post is about why that no longer buys anything.
 

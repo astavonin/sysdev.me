@@ -1,6 +1,6 @@
 ---
 title: "AI, Software Engineering, and the Evolution of Code Generation"
-description: "Mark Zuckerberg recently made a bold statement: AI will soon take over the work of mid-level engineers (Forbes)."
+description: "Zuckerberg says AI will soon do the work of mid-level engineers. I gave o3-mini-high a real task on my own Go library, an AST-based generator for PlantUML and Mermaid, to see how close that is."
 date: 2025-02-05
 slug: "ai-software-engineering-and-the-evolution-of-code-generation"
 lang: en
