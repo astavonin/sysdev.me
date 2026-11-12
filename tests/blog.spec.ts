@@ -251,6 +251,15 @@ test.describe("Mermaid", () => {
   // Named explicitly rather than indexed out of the fixture, whose order
   // would otherwise be load-bearing.
   const PLAIN_POST = "/2026/10/19/bazel-cross-compilation/";
+  // Counted from the built page rather than written down, so adding a fence to
+  // the post cannot leave the assertions checking a stale number.
+  const fenceCount = (route: string) =>
+    (
+      readFileSync(
+        fileURLToPath(new URL(`../dist${route}index.html`, import.meta.url)),
+        "utf8",
+      ).match(/data-language="mermaid"/g) ?? []
+    ).length;
 
   test("fences render as diagrams, with no copy-button text inside", async ({
     page,
@@ -258,10 +267,35 @@ test.describe("Mermaid", () => {
     await page.goto(DIAGRAM_POST);
     const figures = page.locator("figure.mermaid-figure svg");
     await expect(figures.first()).toBeVisible();
-    expect(await page.locator('pre[data-language="mermaid"]').count()).toBe(0);
+    // Retrying form, not a bare count(): the renderer swaps fences one at a
+    // time, so the first figure appearing does not mean the last one has.
+    await expect(page.locator('pre[data-language="mermaid"]')).toHaveCount(0);
     // The copy button lives inside <pre>; reading it as diagram source drew a
     // stray "Copy" node.
     expect(await figures.first().textContent()).not.toContain("Copy");
+  });
+
+  test("every fence is replaced, however slow the device", async ({ page }) => {
+    const fences = fenceCount(DIAGRAM_POST);
+    // A partial conversion is only observable on a post with two of them.
+    expect(fences).toBeGreaterThan(1);
+
+    // Throttled so the page is demonstrably mid-conversion when the first
+    // diagram lands — the window the CI flake read the leftover count in.
+    // Asserted on the end state, so the rate only widens the window.
+    const cdp = await page.context().newCDPSession(page);
+    await cdp.send("Emulation.setCPUThrottlingRate", { rate: 5 });
+    await page.goto(DIAGRAM_POST);
+
+    const slow = { timeout: 30_000 };
+    await expect(page.locator("figure.mermaid-figure svg")).toHaveCount(
+      fences,
+      slow,
+    );
+    await expect(page.locator('pre[data-language="mermaid"]')).toHaveCount(
+      0,
+      slow,
+    );
   });
 
   test("diagrams follow the theme toggle", async ({ page }) => {
