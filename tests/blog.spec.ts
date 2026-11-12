@@ -377,3 +377,24 @@ test.describe("Footnotes", () => {
     await expect(ref).toBeInViewport();
   });
 });
+
+test.describe("Article summary", () => {
+  test("the summary outranks the byline without matching the body", async ({
+    page,
+  }) => {
+    await page.goto("/2026/10/19/bazel-cross-compilation/");
+    const colors = await page.evaluate(() => {
+      const read = (selector: string) =>
+        getComputedStyle(document.querySelector(selector) as HTMLElement).color;
+      return {
+        summary: read(".article-header > p"),
+        byline: read(".article-meta"),
+        body: read(".prose p"),
+      };
+    });
+    // Sharing the byline's grey made the summary read as metadata; matching
+    // the body would make it read as the article's first paragraph.
+    expect(colors.summary).not.toBe(colors.byline);
+    expect(colors.summary).not.toBe(colors.body);
+  });
+});

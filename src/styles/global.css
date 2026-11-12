@@ -11,6 +11,9 @@
   --surface: #eef0f3;
   --text: #23272e;
   --muted: #5f6772;
+  /* One step up from --muted, for a summary that should outrank the byline
+     next to it without competing with the article text below it. */
+  --lead: #3e454e;
   --accent: #4a6a8a;
   --accent-strong: #3a5673;
   --accent-soft: #e6ecf2;
@@ -28,6 +31,7 @@
   --surface: #25292e;
   --text: #dcdfe3;
   --muted: #9aa1aa;
+  --lead: #c2c7ce;
   --accent: #8daac7;
   --accent-strong: #a9c0d7;
   --accent-soft: #263240;
