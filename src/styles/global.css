@@ -20,6 +20,13 @@
   --accent-contrast: #ffffff;
   --line: #dde1e6;
   --line-strong: #c8ced6;
+  /* Callout accents. Muted enough to sit inside an article without competing
+     with it, distinct enough to tell a warning from an aside at a glance. */
+  --callout-note: #4a6a8a;
+  --callout-example: #6f5aa8;
+  --callout-info: #2a7099;
+  --callout-tip: #2d7d5d;
+  --callout-warning: #9a6b14;
   --shadow: none;
   --shadow-lg: 0 6px 20px #23272e14;
   --radius: 8px;
@@ -38,6 +45,11 @@
   --accent-contrast: #17191c;
   --line: #2e3238;
   --line-strong: #3b4048;
+  --callout-note: #8daac7;
+  --callout-example: #ac98da;
+  --callout-info: #78b4d6;
+  --callout-tip: #79c0a0;
+  --callout-warning: #d4ab63;
   --shadow: none;
   --shadow-lg: 0 6px 20px #00000059;
   color-scheme: dark;
@@ -481,6 +493,106 @@ a.chip:hover {
   margin-top: 10px;
   font-size: 14px;
   color: var(--muted);
+}
+/* Collapsible callouts, written as :::note[Title] in Markdown. The kind only
+   selects an accent colour; everything else is shared. */
+.prose .callout {
+  --callout: var(--callout-note);
+  margin: 26px 0;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--callout);
+  border-radius: var(--radius);
+  background: var(--card);
+  /* Clips the tinted summary to the rounded corners. */
+  overflow: hidden;
+}
+.prose .callout-example {
+  --callout: var(--callout-example);
+}
+.prose .callout-info {
+  --callout: var(--callout-info);
+}
+.prose .callout-tip {
+  --callout: var(--callout-tip);
+}
+.prose .callout-warning {
+  --callout: var(--callout-warning);
+}
+/* One icon per kind, as the Material admonitions this syntax borrows from. */
+.prose .callout-note > summary::before {
+  @apply icon-[lucide--pencil];
+}
+.prose .callout-example > summary::before {
+  @apply icon-[lucide--flask-conical];
+}
+.prose .callout-info > summary::before {
+  @apply icon-[lucide--info];
+}
+.prose .callout-tip > summary::before {
+  @apply icon-[lucide--flame];
+}
+.prose .callout-warning > summary::before {
+  @apply icon-[lucide--triangle-alert];
+}
+.prose .callout > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--callout) 9%, transparent);
+  color: var(--callout);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  /* Hides the native disclosure triangle in Firefox and Safari; Chrome needs
+     the pseudo-element below. */
+  list-style: none;
+}
+.prose .callout > summary::-webkit-details-marker {
+  display: none;
+}
+/* The kind icon. @apply pulls in the Iconify mask; everything the utility
+   does not set is below. */
+.prose .callout > summary::before {
+  content: "";
+  flex: none;
+  font-size: 17px;
+  opacity: 0.9;
+}
+/* The chevron, pushed to the far end: a square with two borders, rotated.
+   Right when collapsed, down when open. */
+.prose .callout > summary::after {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  margin-right: 4px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.18s;
+}
+.prose .callout[open] > summary::after {
+  transform: rotate(45deg);
+}
+.prose .callout > summary:hover {
+  background: color-mix(in srgb, var(--callout) 16%, transparent);
+}
+/* The box clips its corners, so an outset focus ring would be cut off. */
+.prose .callout > summary:focus-visible {
+  outline-offset: -2px;
+}
+.prose .callout-body {
+  padding: 4px 16px 14px;
+  border-top: 1px solid var(--line);
+}
+.prose .callout-body > :first-child {
+  margin-top: 14px;
+}
+.prose .callout-body > :last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 1100px) {
   .blog-grid {

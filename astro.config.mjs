@@ -3,9 +3,11 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
+import { satteri } from "@astrojs/markdown-satteri";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { loadEnv } from "vite";
 import { languages, defaultLanguage } from "./src/i18n/index.ts";
+import { calloutPlugin } from "./src/plugins/satteri-callout.ts";
 
 // The canonical origin. Never defaults to anything but this site: every
 // canonical tag, feed link and sitemap entry derives from it, and publishing a
@@ -85,6 +87,15 @@ export default defineConfig({
   prefetch: { prefetchAll: true, defaultStrategy: "hover" },
   // Prerender prefetched pages with the Speculation Rules API where supported.
   experimental: { clientPrerender: true },
+  // Sätteri is Astro's default Markdown processor; naming it here is what
+  // allows the options. `directive` parses the `:::name[label]{attrs}` blocks
+  // and the callout plugin turns a known name into a <details> element.
+  markdown: {
+    processor: satteri({
+      features: { directive: true },
+      mdastPlugins: [calloutPlugin],
+    }),
+  },
   integrations: [
     vue(),
     sitemap({

@@ -136,5 +136,10 @@
   "category.gstreamer": "GStreamer",
   "category.git": "Git",
   "category.elixir": "Elixir",
-  "category.docker": "Docker"
+  "category.docker": "Docker",
+  "callout.note": "Note",
+  "callout.example": "Example",
+  "callout.info": "Info",
+  "callout.tip": "Tip",
+  "callout.warning": "Warning"
 }

@@ -1,0 +1,3 @@
+# pnpm writes this file in its own style; reformatting it rewrites every line
+# and makes the next dependency diff unreadable.
+pnpm-lock.yaml

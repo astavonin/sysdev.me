@@ -38,6 +38,31 @@ the matching `category.*` key in `src/i18n/en.json` — the type checker fails
 the build if the first two disagree. Images live in
 `public/img/` and are referenced from the site root (`/img/...`).
 
+### Collapsible callouts
+
+Long asides, reference tables and full source listings go in a callout, which
+renders as a `<details>` element the reader can expand. Five kinds — `note`,
+`example`, `info`, `tip`, `warning` — each with its own colour and icon:
+
+````markdown
+:::example[Simple echo server source code]
+Ordinary Markdown, including fenced code and Mermaid diagrams.
+
+```go
+func main() {}
+```
+
+:::
+````
+
+The label in brackets is optional and falls back to the kind's own name;
+`{open}` after it renders the callout expanded instead of collapsed. An unknown
+kind fails the build rather than quietly rendering as a plain block.
+
+The `:::` syntax is Sätteri's `directive` feature, enabled in
+`astro.config.mjs`; `src/plugins/satteri-callout.ts` is what turns a kind into
+markup, and `callout.*` in `src/i18n/en.json` holds the default labels.
+
 ## Build and publish
 
 ```bash

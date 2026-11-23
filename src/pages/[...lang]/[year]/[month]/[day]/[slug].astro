@@ -203,7 +203,13 @@ const older = posts[index + 1];
       let current = "";
       for (const link of tocLinks) {
         const heading = document.getElementById(link.dataset.heading || "");
-        if (heading && heading.getBoundingClientRect().top <= 150)
+        // A heading inside a collapsed callout has no box at all, and its
+        // zeroed rect would otherwise read as "scrolled past".
+        if (
+          heading &&
+          heading.getClientRects().length &&
+          heading.getBoundingClientRect().top <= 150
+        )
           current = link.dataset.heading || "";
       }
       tocLinks.forEach((link) => {
@@ -254,6 +260,26 @@ const older = posts[index + 1];
       });
       pre.append(button);
     });
+    // Any link into a collapsed callout — a TOC entry, a footnote, a shared
+    // anchor — lands on content the browser is not showing. Open its callouts
+    // and re-scroll, or the reader sees the wrong part of the page.
+    const revealTarget = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const target = id && document.getElementById(id);
+      if (!target) return;
+      let opened = false;
+      for (
+        let note = target.closest("details");
+        note;
+        note = note.parentElement?.closest("details") ?? null
+      ) {
+        opened ||= !note.open;
+        note.open = true;
+      }
+      if (opened) target.scrollIntoView();
+    };
+    window.addEventListener("hashchange", revealTarget);
+    revealTarget();
   </script>
 </BaseLayout>
 <style>
