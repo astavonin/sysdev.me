@@ -78,6 +78,13 @@ export default defineConfig({
   site: site.href,
   output: "static",
   trailingSlash: "always",
+  // Posts that moved to gtog.dev, where the composed version lives. Static
+  // output emits a meta-refresh page, which is the most a static host can do
+  // here: there is no .htaccess and no server config in this deployment.
+  redirects: {
+    "/2026/11/23/mipi-isp-architectures/":
+      "https://gtog.dev/npu-gpu/isp-architectures/",
+  },
   // Astro's default. Collapses inter-element whitespace in the emitted HTML.
   compressHTML: true,
   // "auto" inlines only sheets under ~4kB; beyond that a cached external
